@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+    version="2.0">
+	
+	 <application>
+      <view-handler>org.ajax4jsf.application.AjaxViewHandler</view-handler>
+     </application>
+	
+    <managed-bean>
+    	<description>This Bean Returns The Connection Object</description>
+    	<managed-bean-name>connector</managed-bean-name>
+    	<managed-bean-class>health.utility.Connector</managed-bean-class>
+    	<managed-bean-scope>session</managed-bean-scope>
+    	<managed-property>
+    		<property-name>driverName</property-name>
+    		<property-class>java.lang.String</property-class>
+    		<value>com.mysql.jdbc.Driver</value>
+    	</managed-property>
+    	<managed-property>
+    		<property-name>hostName</property-name>
+    		<property-class>java.lang.String</property-class>
+    		<value>jdbc:mysql://localhost:3306/dbhealth</value>
+    	</managed-property>
+    	<managed-property>
+    		<property-name>userName</property-name>
+    		<property-class>java.lang.String</property-class>
+    		<value>dbahealth</value>
+    	</managed-property>
+    	<managed-property>
+    		<property-name>passWord</property-name>
+    		<property-class>java.lang.String</property-class>
+    		<value>dbahealthadmin</value>
+    	</managed-property>
+    </managed-bean>
+    <managed-bean>
+    	<description>Returns Common Static Values from Database such as List values</description>
+    	<managed-bean-name>appUtilities</managed-bean-name>
+    	<managed-bean-class>health.utility.AppUtilities</managed-bean-class>
+    	<managed-bean-scope>application</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+    	<managed-bean-name>data</managed-bean-name>
+    	<managed-bean-class>health.Data</managed-bean-class>
+    	<managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+    	<managed-bean-name>patientInfoModel</managed-bean-name>
+    	<managed-bean-class>health.info.model.PatientInfoModel</managed-bean-class>
+    	<managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+    	<managed-bean-name>globalUtility</managed-bean-name>
+    	<managed-bean-class>health.GlobalUtility</managed-bean-class>
+    	<managed-bean-scope>application</managed-bean-scope>
+    	<managed-property>
+    		<property-name>appTitle</property-name>
+    		<property-class>java.lang.String</property-class>
+    		<value>Healthcare Information System</value>
+    	</managed-property>
+    </managed-bean>
+    <managed-bean>
+    	<managed-bean-name>navTree</managed-bean-name>
+    	<managed-bean-class>health.utility.NavTree</managed-bean-class>
+    	<managed-bean-scope>application</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+    	<managed-bean-name>skinBean</managed-bean-name>
+    	<managed-bean-class>health.utility.SkinBean</managed-bean-class>
+    	<managed-bean-scope>session</managed-bean-scope>
+    	<managed-property>
+    		<property-name>skin</property-name>
+    		<property-class>java.lang.String</property-class>
+    		<value>blueSky</value>
+    	</managed-property>
+    </managed-bean>
+    <managed-bean>
+    	<managed-bean-name>patientBean</managed-bean-name>
+    	<managed-bean-class>health.PatientBean</managed-bean-class>
+    	<managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    
+  
+ 	<navigation-rule>
+		<display-name>RegisterPatient</display-name>
+		<from-view-id>/AccountSection/RegisterPatient.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>register</from-outcome>
+			<to-view-id>/AccountSection/RegisterPatient.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>MainAccount</from-outcome>
+			<to-view-id>/AccountSection/MainAccount.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+    
+	
+<navigation-rule>
+		<display-name>MainAccount</display-name>
+		<from-view-id>/AccountSection/MainAccount.jsp</from-view-id>
+		<navigation-case>
+		    <from-outcome>registration</from-outcome>
+			<to-view-id>/AccountSection/RegisterPatient.jsp</to-view-id>
+		</navigation-case>
+		
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>PatientInfo</display-name>
+		<from-view-id>/AccountSection/PatientInfo.jsp</from-view-id>
+		<navigation-case>
+		    <from-outcome>ok</from-outcome>
+			<to-view-id>/AccountSection/PatientInfo.jsp</to-view-id>
+		</navigation-case>
+		
+	</navigation-rule>
+	
+</faces-config>

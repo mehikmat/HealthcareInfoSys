@@ -1,0 +1,81 @@
+
+.even_row {
+       		 background-color:#FCFFFE;
+          }
+          
+.odd_row {
+        	background-color:#ECF3FE;
+         }
+
+.active_row {
+        	 background-color:#FFEBDA;
+       		 cursor: pointer;
+       		 }
+       		 
+ 
+@MEDIA print
+ 	{
+    .noprint
+     	 {
+			display:none;
+		 }
+	
+	}
+    	
+ .button
+ {
+ background: url("/Resources/Icons/home_page.png");
+ }
+.form
+   {
+	 font-family:arial;
+	 font-size:14;
+	
+	 
+   }
+   
+ .page
+ 
+ {
+ 	 leftmargin=100px;
+ 	 rightmargin=100px;
+ 	 topmargin=10px;
+ 	 bottommargin=10px;
+ 	 width:200;
+ 
+ }	
+ .e
+ {
+ 	color:red;
+ 	font-size:9px;
+ 	font-weight:bold;
+ 
+ }
+ 
+ .ppanel
+ {
+  width:100%;
+  caption-side: right;
+  
+ }
+
+ .foo td
+ {
+ vertical-align:top;
+ }
+ .fo input
+ {
+  
+  width:100%;
+  text-align:left;
+  
+  font-size:14px;
+  padding:0.2em;
+ 
+ }
+ .heading
+ {
+ font-size:18px;
+ color:gray;
+ font-weight:bold;
+ }
